@@ -1,16 +1,35 @@
-$brand-primary: #532F8C;
-$brand-language: #B01302;
-
+$brand-primary: rgba(115, 226, 183, 1);
+$brand-language: rgba(115, 226, 183, 1);
+$brand-dark: darken($brand-language, 50%);
+$brand-light: lighten($brand-language, 25%);
+body
+{
+  .rotate-me {    animation: rotation 18s infinite linear; }
+  .rotate-me-fast {    animation: rotation 4s infinite linear; }
+    @keyframes rotation {
+      from  { transform: rotate(0deg) scale(1); }
+      10%   { transform: rotate(30deg) scale(1.3); }
+      90%   { transform: rotate(180deg) scale(1.6); }
+      to    { transform: rotate(359deg) scale(1); }
+    }
+  
+}
 .jumbotron {
-  background: $brand-primary;
+  background: $brand-dark;
   color: white;
   padding-bottom: 80px;
 
-  .btn-primary {
-    background: lighten($brand-primary, 20%);
-    border-color: lighten($brand-primary, 20%);
+  .btn {
+    margin-left:10px;
+    background-color: lighten($brand-primary, 10%);
     &:hover {
       background: lighten($brand-primary, 15%);
+    } }
+  .btn-primary {
+    background: darken($brand-primary, 20%);
+    border-color: darken($brand-primary, 20%);
+    &:hover {
+      background: darken($brand-primary, 15%);
     }
   }
 
@@ -33,8 +52,15 @@ $brand-language: #B01302;
     height: 100px;
     margin: auto;
     border: 2px solid white;
+    box-shadow: -10px 8px 12px #00000088;
     img {
+      padding-top: 7px;
+      padding-left: 2px;
       max-width: 100%;
+      zoom:1.5;
+    }
+    &:hover {
+      animation: rotation 2s infinite linear; 
     }
   }
 

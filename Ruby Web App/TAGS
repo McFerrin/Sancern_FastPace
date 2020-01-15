@@ -1,59 +1,0 @@
-
-app/models/widget.rb,45
-class Widget < ActiveRecord::BaseWidget1,0
-
-app/controllers/application_controller.rb,79
-class ApplicationController < ActionController::BaseApplicationController1,0
-
-app/controllers/welcome_controller.rb,92
-class WelcomeController < ApplicationControllerWelcomeController1,0
-  def indexindex4,0
-
-app/controllers/widgets_controller.rb,306
-class WidgetsController < ApplicationControllerWidgetsController1,0
-  def indexindex6,0
-  def showshow12,0
-  def newnew16,0
-  def editedit21,0
-  def createcreate26,0
-  def updateupdate42,0
-  def destroydestroy56,0
-    def set_widgetset_widget66,0
-    def widget_paramswidget_params71,0
-
-app/helpers/welcome_helper.rb,39
-module WelcomeHelperWelcomeHelper1,0
-
-app/helpers/widgets_helper.rb,39
-module WidgetsHelperWidgetsHelper1,0
-
-app/helpers/application_helper.rb,47
-module ApplicationHelperApplicationHelper1,0
-
-test/models/widget_test.rb,58
-class WidgetTest < ActiveSupport::TestCaseWidgetTest3,0
-
-test/test_helper.rb,101
-class ActiveSupport::TestCaseTestCase5,0
-class ActiveSupport::TestCaseActiveSupport::TestCase5,0
-
-test/controllers/widgets_controller_test.rb,83
-class WidgetsControllerTest < ActionController::TestCaseWidgetsControllerTest3,0
-
-test/controllers/welcome_controller_test.rb,83
-class WelcomeControllerTest < ActionController::TestCaseWelcomeControllerTest3,0
-
-test/helpers/welcome_helper_test.rb,69
-class WelcomeHelperTest < ActionView::TestCaseWelcomeHelperTest3,0
-
-test/helpers/widgets_helper_test.rb,69
-class WidgetsHelperTest < ActionView::TestCaseWidgetsHelperTest3,0
-
-config/application.rb,185
-module RubyGettingStartedRubyGettingStarted9,0
-  class Application < Rails::ApplicationApplication10,0
-  class Application < Rails::ApplicationRubyGettingStarted::Application10,0
-
-db/migrate/20140707111715_create_widgets.rb,93
-class CreateWidgets < ActiveRecord::Migration[5.1]CreateWidgets1,0
-  def changechange2,0
