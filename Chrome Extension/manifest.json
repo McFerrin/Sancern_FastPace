@@ -1,0 +1,16 @@
+{
+  "manifest_version": 2,
+
+  "name": "Sancern FastPace Plugin",
+  "description": "Developed by Mike McFerrin in 2020",
+  "version": "2.0",
+
+  "options_page": "options.html",
+  "browser_action": {
+   "default_icon": "icon.png",
+   "default_popup": "popup.html"
+  },
+  "permissions": [
+   "activeTab", "storage", "declarativeContent"
+   ]
+}
