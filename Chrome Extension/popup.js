@@ -149,7 +149,7 @@ document.addEventListener('DOMContentLoaded', checkForPageHandlers , false);
 		chrome.tabs.executeScript(CurrentTab.id, {code: 
 				"var xmlHttp = new XMLHttpRequest();" +
 				"var tabURL = encodeURI( document.location.href );" +
-				"xmlHttp.open( \"GET\", \"" + url + "?page=\" + tabURL, false ); " +
+				"xmlHttp.open( \"GET\", \"" + url + "/\" + tabURL, false ); " +
 				"xmlHttp.send( null );" +
 				"console.log('Return from public url', xmlHttp.responseText ) ;" +
 				"var theElement = document.createElement('div');" +

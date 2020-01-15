@@ -2,8 +2,8 @@ from flask import Flask
 from flask import request
 app = Flask(__name__)
 
-@app.route('/')
-def index():
+@app.route('/<requestpath>')
+def index(requestpath):
  
   script = '' \
     '<!DOCTYPE html>' \
@@ -15,7 +15,7 @@ def index():
     '' \
     '   </head>' \
     '   <body>' \
-    '     <h4>Request for page<span>' + request.path + '</span></h4>' \
+    '     <h4>Request for page<span>' + requestpath + '</span></h4>' \
     '   </body>' \
     ' </html>' 
   
