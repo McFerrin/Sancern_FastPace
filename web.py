@@ -1,15 +1,16 @@
 #import os
 #import psycopg2
-from sqlalchemy import create_engine
-from sqlalchemy.orm import scoped_session, sessionmaker
+#from sqlalchemy import create_engine
+#from sqlalchemy.orm import scoped_session, sessionmaker
 from flask import Flask
 from flask import request
-import os
+#import os
 app = Flask(__name__)
 
   
-# @app.route('/db/test')
-# def db_test():
+@app.route('/db/test')
+def db_test():
+  return "db test route"
 #   put "DB TEST"
 #   RESPONSE = ""
 #   DATABASE_URL = os.environ['DATABASE_URL']
