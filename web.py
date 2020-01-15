@@ -1,7 +1,10 @@
 #import os
-import psycopg2
+#import psycopg2
+from sqlalchemy import create_engine
+from sqlalchemy.orm import scoped_session, sessionmaker
 from flask import Flask
 from flask import request
+import os
 app = Flask(__name__)
 
   
