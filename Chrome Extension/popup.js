@@ -150,7 +150,7 @@ document.addEventListener('DOMContentLoaded', checkForPageHandlers , false);
 		chrome.tabs.executeScript(CurrentTab.id, {code: 
 				"var xmlHttp = new XMLHttpRequest();" +
 				"var tabURL = encodeURIComponent( document.location.href.replace('http://','').replace('https://','') );" +
-				"alert('" + url + "/1?path=' + tabURL);" +
+//				"alert('" + url + "/load?path=' + tabURL);" +
 				"xmlHttp.open( 'GET', '" + url + "/1?path=' + tabURL, false ); " +
 				"xmlHttp.send( null );" +
 				"console.log('Return from public url', xmlHttp.responseText ) ;" +
@@ -158,7 +158,7 @@ document.addEventListener('DOMContentLoaded', checkForPageHandlers , false);
 				"theElement.tagName='CHROME_EXTENSION_RESULT';" +
 				"theElement.className = 'CHROME_EXTENSION_RESULT';" +
 				"var existingElementCount = document.getElementsByClassName('CHROME_EXTENSION_RESULT').length;" +
-				"theElement.style = 'height: 82px; padding:2px 10px; overflow: hidden; box-shadow: -5px 10px 8px rgba(0, 0, 0, 0.833); border:3px solid rgba(255, 255, 255, 0.833); ; border-radius: 7px; background-color:white; position:absolute; z-index:99999; left: 10px; top:' + (existingElementCount * 90) + 'px;';" + 
+				"theElement.style = 'height: 82px; padding:2px 10px; overflow: hidden; box-shadow: -5px 10px 8px rgba(0, 0, 0, 0.833); border:3px solid rgba(255, 255, 255, 0.833); ; border-radius: 7px; background-color:white; position:absolute; z-index:99999; left: 10px; top:' + (10 + (existingElementCount * 90)) + 'px;';" + 
 				"theElement.innerHTML = xmlHttp.responseText;" + 
 				"document.getElementsByTagName(\"body\")[0].appendChild(theElement);" +
 				"theElement.innerHTML;"
