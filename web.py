@@ -1,5 +1,5 @@
-import os
-import psycopg2
+#import os
+#import psycopg2
 from flask import Flask
 from flask import request
 app = Flask(__name__)
