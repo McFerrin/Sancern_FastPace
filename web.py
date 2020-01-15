@@ -1,7 +1,5 @@
 from flask import Flask
 from flask import request
-import os
-import psycopg2
 app = Flask(__name__)
 
 @app.route('/<requestpath>')
