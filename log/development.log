@@ -1,0 +1,394 @@
+  [1m[35m (278.8ms)[0m  [1m[35mCREATE DATABASE "ruby-getting-started_development" ENCODING = 'unicode'[0m
+  ↳ /Users/mcferrin/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (65.9ms)[0m  [1m[35mCREATE DATABASE "ruby-getting-started_test" ENCODING = 'unicode'[0m
+  ↳ /Users/mcferrin/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (16.9ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  ↳ /Users/mcferrin/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (4.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ /Users/mcferrin/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3978878207179910370)[0m
+  ↳ /Users/mcferrin/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/mcferrin/.rbenv/versions/2.5.1/bin/rake:23
+Migrating to CreateWidgets (20140707111715)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/mcferrin/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (9.9ms)[0m  [1m[35mCREATE TABLE "widgets" ("id" bigserial primary key, "name" character varying, "description" text, "stock" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20140707111715_create_widgets.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20140707111715"]]
+  ↳ /Users/mcferrin/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/mcferrin/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /Users/mcferrin/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/mcferrin/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[36mActiveRecord::InternalMetadata Create (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2020-01-15 12:40:07.507847"], ["updated_at", "2020-01-15 12:40:07.507847"]]
+  ↳ /Users/mcferrin/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/mcferrin/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(3978878207179910370)[0m
+  ↳ /Users/mcferrin/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/mcferrin/.rbenv/versions/2.5.1/bin/rake:23
+Started GET "/" for 127.0.0.1 at 2020-01-15 06:40:39 -0600
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/mcferrin/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.erb within layouts/application
+  Rendered welcome/index.erb within layouts/application (587.0ms)
+Completed 200 OK in 671ms (Views: 663.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-01-15 06:43:43 -0600
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/mcferrin/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.erb within layouts/application
+  Rendered welcome/index.erb within layouts/application (149.8ms)
+Completed 200 OK in 194ms (Views: 186.4ms | ActiveRecord: 0.0ms)
+
+
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3978878207179910370)[0m
+  ↳ bin/rails:4
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:4
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:4
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:4
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:4
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(3978878207179910370)[0m
+  ↳ bin/rails:4
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:4
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:4
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:4
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:4
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3978878207179910370)[0m
+  ↳ bin/rails:4
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:4
+Migrating to CreateWidgets (20140707111715)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:4
+  [1m[35m (10.0ms)[0m  [1m[35mDROP TABLE "widgets"[0m
+  ↳ bin/rails:4
+  [1m[36mActiveRecord::SchemaMigration Destroy (0.4ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = $1[0m  [["version", "20140707111715"]]
+  ↳ bin/rails:4
+  [1m[35m (7.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:4
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(3978878207179910370)[0m
+  ↳ bin/rails:4
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:4
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3978878207179910370)[0m
+  ↳ bin/rails:4
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:4
+Migrating to CreateWidgets (20140707111715)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:4
+  [1m[35m (6.5ms)[0m  [1m[35mCREATE TABLE "widgets" ("id" bigserial primary key, "name" character varying, "description" text, "stock" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20140707111715_create_widgets.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20140707111715"]]
+  ↳ bin/rails:4
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:4
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:4
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:4
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:4
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(3978878207179910370)[0m
+  ↳ bin/rails:4
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:4
+Started GET "/widgets/1" for 127.0.0.1 at 2020-01-15 07:04:56 -0600
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/mcferrin/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by WidgetsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mWidget Load (0.7ms)[0m  [1m[34mSELECT  "widgets".* FROM "widgets" WHERE "widgets"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/widgets_controller.rb:67
+Completed 404 Not Found in 19ms (ActiveRecord: 5.6ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Widget with 'id'=1):
+  
+app/controllers/widgets_controller.rb:67:in `set_widget'
+Started GET "/widgets" for 127.0.0.1 at 2020-01-15 07:05:12 -0600
+Processing by WidgetsController#index as HTML
+  Rendering widgets/index.html.erb within layouts/application
+  [1m[36mWidget Load (0.3ms)[0m  [1m[34mSELECT "widgets".* FROM "widgets"[0m
+  ↳ app/views/widgets/index.html.erb:15
+  Rendered widgets/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 200ms (Views: 194.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/widgets/new" for 127.0.0.1 at 2020-01-15 07:05:14 -0600
+Processing by WidgetsController#new as HTML
+  Rendering widgets/new.html.erb within layouts/application
+  Rendered widgets/_form.html.erb (17.7ms)
+  Rendered widgets/new.html.erb within layouts/application (20.8ms)
+Completed 200 OK in 49ms (Views: 40.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/widgets" for 127.0.0.1 at 2020-01-15 07:05:27 -0600
+Processing by WidgetsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"XoFJDco8/l2KuSDGofCq1/fw4WN5AEp8BMPosk4SbphaL6h49r8PbuoMhhzHo8MK3eBQOKD/kkUSYJA+qmORug==", "widget"=>{"name"=>"FIRST", "description"=>"first", "stock"=>"122"}, "commit"=>"Create Widget"}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/widgets_controller.rb:30
+  [1m[36mWidget Create (0.6ms)[0m  [1m[32mINSERT INTO "widgets" ("name", "description", "stock", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "FIRST"], ["description", "first"], ["stock", 122], ["created_at", "2020-01-15 13:05:27.021987"], ["updated_at", "2020-01-15 13:05:27.021987"]]
+  ↳ app/controllers/widgets_controller.rb:30
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/widgets_controller.rb:30
+Redirected to http://localhost:5001/widgets/1
+Completed 302 Found in 4ms (ActiveRecord: 1.0ms)
+
+
+Started GET "/widgets/1" for 127.0.0.1 at 2020-01-15 07:05:27 -0600
+Processing by WidgetsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mWidget Load (0.3ms)[0m  [1m[34mSELECT  "widgets".* FROM "widgets" WHERE "widgets"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/widgets_controller.rb:67
+  Rendering widgets/show.html.erb within layouts/application
+  Rendered widgets/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 42ms (Views: 37.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-01-15 07:05:31 -0600
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.erb within layouts/application
+  Rendered welcome/index.erb within layouts/application (1.3ms)
+Completed 200 OK in 26ms (Views: 22.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/widgets" for 127.0.0.1 at 2020-01-15 07:05:36 -0600
+Processing by WidgetsController#index as HTML
+  Rendering widgets/index.html.erb within layouts/application
+  [1m[36mWidget Load (0.3ms)[0m  [1m[34mSELECT "widgets".* FROM "widgets"[0m
+  ↳ app/views/widgets/index.html.erb:15
+  Rendered widgets/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 23ms (Views: 20.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/widgets/1" for 127.0.0.1 at 2020-01-15 07:13:20 -0600
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/mcferrin/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by WidgetsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mWidget Load (0.5ms)[0m  [1m[34mSELECT  "widgets".* FROM "widgets" WHERE "widgets"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/widgets_controller.rb:67
+  Rendering widgets/show.html.erb within layouts/application
+  Rendered widgets/show.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 219ms (Views: 194.3ms | ActiveRecord: 7.1ms)
+
+
+Started GET "/widgets/new" for 127.0.0.1 at 2020-01-15 07:13:34 -0600
+Processing by WidgetsController#new as HTML
+  Rendering widgets/new.html.erb within layouts/application
+  Rendered widgets/_form.html.erb (13.8ms)
+  Rendered widgets/new.html.erb within layouts/application (16.7ms)
+Completed 200 OK in 40ms (Views: 37.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/widgets" for 127.0.0.1 at 2020-01-15 07:14:11 -0600
+Processing by WidgetsController#index as HTML
+  Rendering widgets/index.html.erb within layouts/application
+  [1m[36mWidget Load (0.7ms)[0m  [1m[34mSELECT "widgets".* FROM "widgets"[0m
+  ↳ app/views/widgets/index.html.erb:15
+  Rendered widgets/index.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 49ms (Views: 44.4ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/widgets/new" for 127.0.0.1 at 2020-01-15 07:14:14 -0600
+Processing by WidgetsController#new as HTML
+  Rendering widgets/new.html.erb within layouts/application
+  Rendered widgets/_form.html.erb (3.6ms)
+  Rendered widgets/new.html.erb within layouts/application (6.3ms)
+Completed 200 OK in 41ms (Views: 37.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/widgets" for 127.0.0.1 at 2020-01-15 07:14:16 -0600
+Processing by WidgetsController#index as HTML
+  Rendering widgets/index.html.erb within layouts/application
+  [1m[36mWidget Load (0.3ms)[0m  [1m[34mSELECT "widgets".* FROM "widgets"[0m
+  ↳ app/views/widgets/index.html.erb:15
+  Rendered widgets/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 39ms (Views: 35.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/widgets/1/edit" for 127.0.0.1 at 2020-01-15 07:14:19 -0600
+Processing by WidgetsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mWidget Load (0.4ms)[0m  [1m[34mSELECT  "widgets".* FROM "widgets" WHERE "widgets"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/widgets_controller.rb:67
+  Rendering widgets/edit.html.erb within layouts/application
+  Rendered widgets/_form.html.erb (3.4ms)
+  Rendered widgets/edit.html.erb within layouts/application (7.0ms)
+Completed 200 OK in 44ms (Views: 39.1ms | ActiveRecord: 0.8ms)
+
+
+Started PATCH "/widgets/1" for 127.0.0.1 at 2020-01-15 07:14:23 -0600
+Processing by WidgetsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"eO8fVrcuAuZOJbmfjFfbCOMZMeHIx0SnitF0dr8tVTnOptxGAD3zT+UibASmJndIcCmi9b3+DPXNt6mzInGegQ==", "widget"=>{"name"=>"FIRST", "description"=>"first", "stock"=>"123"}, "commit"=>"Update Widget", "id"=>"1"}
+  [1m[36mWidget Load (0.3ms)[0m  [1m[34mSELECT  "widgets".* FROM "widgets" WHERE "widgets"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/widgets_controller.rb:67
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/widgets_controller.rb:44
+  [1m[36mWidget Update (0.6ms)[0m  [1m[33mUPDATE "widgets" SET "stock" = $1, "updated_at" = $2 WHERE "widgets"."id" = $3[0m  [["stock", 123], ["updated_at", "2020-01-15 13:14:23.319137"], ["id", 1]]
+  ↳ app/controllers/widgets_controller.rb:44
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/widgets_controller.rb:44
+Redirected to http://localhost:5001/widgets/1
+Completed 302 Found in 6ms (ActiveRecord: 1.4ms)
+
+
+Started GET "/widgets/1" for 127.0.0.1 at 2020-01-15 07:14:23 -0600
+Processing by WidgetsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mWidget Load (0.2ms)[0m  [1m[34mSELECT  "widgets".* FROM "widgets" WHERE "widgets"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/widgets_controller.rb:67
+  Rendering widgets/show.html.erb within layouts/application
+  Rendered widgets/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 21ms (Views: 18.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/widgets" for 127.0.0.1 at 2020-01-15 07:14:25 -0600
+Processing by WidgetsController#index as HTML
+  Rendering widgets/index.html.erb within layouts/application
+  [1m[36mWidget Load (0.4ms)[0m  [1m[34mSELECT "widgets".* FROM "widgets"[0m
+  ↳ app/views/widgets/index.html.erb:15
+  Rendered widgets/index.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 26ms (Views: 23.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/widgets/new" for 127.0.0.1 at 2020-01-15 07:14:26 -0600
+Processing by WidgetsController#new as HTML
+  Rendering widgets/new.html.erb within layouts/application
+  Rendered widgets/_form.html.erb (1.9ms)
+  Rendered widgets/new.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 31ms (Views: 27.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/widgets" for 127.0.0.1 at 2020-01-15 07:14:32 -0600
+Processing by WidgetsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"1VY5GyRozEYDfOP7fZF4huUkoQ0V/227wuQY779hJrjR+NhuGOs9dWPJRSEbwhFbzzQQVswAtYLUR2BjWxDZmg==", "widget"=>{"name"=>"SECOND", "description"=>"", "stock"=>"25"}, "commit"=>"Create Widget"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/widgets_controller.rb:30
+  [1m[36mWidget Create (0.7ms)[0m  [1m[32mINSERT INTO "widgets" ("name", "description", "stock", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "SECOND"], ["description", ""], ["stock", 25], ["created_at", "2020-01-15 13:14:32.749114"], ["updated_at", "2020-01-15 13:14:32.749114"]]
+  ↳ app/controllers/widgets_controller.rb:30
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/widgets_controller.rb:30
+Redirected to http://localhost:5001/widgets/2
+Completed 302 Found in 4ms (ActiveRecord: 1.2ms)
+
+
+Started GET "/widgets/2" for 127.0.0.1 at 2020-01-15 07:14:32 -0600
+Processing by WidgetsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mWidget Load (0.2ms)[0m  [1m[34mSELECT  "widgets".* FROM "widgets" WHERE "widgets"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/widgets_controller.rb:67
+  Rendering widgets/show.html.erb within layouts/application
+  Rendered widgets/show.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 21ms (Views: 18.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/widgets" for 127.0.0.1 at 2020-01-15 07:14:34 -0600
+Processing by WidgetsController#index as HTML
+  Rendering widgets/index.html.erb within layouts/application
+  [1m[36mWidget Load (0.4ms)[0m  [1m[34mSELECT "widgets".* FROM "widgets"[0m
+  ↳ app/views/widgets/index.html.erb:15
+  Rendered widgets/index.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 30ms (Views: 26.5ms | ActiveRecord: 0.4ms)
+
+
+  [1m[35m (2.2ms)[0m  [1m[35mCREATE DATABASE "ruby-getting-started_development" ENCODING = 'unicode'[0m
+  ↳ /Users/mcferrin/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE DATABASE "ruby-getting-started_test" ENCODING = 'unicode'[0m
+  ↳ /Users/mcferrin/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3978878207179910370)[0m
+  ↳ /Users/mcferrin/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/mcferrin/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /Users/mcferrin/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/mcferrin/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/mcferrin/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(3978878207179910370)[0m
+  ↳ /Users/mcferrin/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/mcferrin/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE DATABASE "ruby-getting-started_development" ENCODING = 'unicode'[0m
+  ↳ /Users/mcferrin/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE DATABASE "ruby-getting-started_test" ENCODING = 'unicode'[0m
+  ↳ /Users/mcferrin/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3978878207179910370)[0m
+  ↳ /Users/mcferrin/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/mcferrin/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /Users/mcferrin/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/mcferrin/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/mcferrin/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(3978878207179910370)[0m
+  ↳ /Users/mcferrin/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/mcferrin/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (3.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:4
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:4
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:4
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3978878207179910370)[0m
+  ↳ bin/rails:4
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:4
+Migrating to CreateWidgets (20140707111715)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:4
+  [1m[35m (6.7ms)[0m  [1m[35mDROP TABLE "widgets"[0m
+  ↳ bin/rails:4
+  [1m[36mActiveRecord::SchemaMigration Destroy (1.2ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = $1[0m  [["version", "20140707111715"]]
+  ↳ bin/rails:4
+  [1m[35m (4.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:4
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT pg_advisory_unlock(3978878207179910370)[0m
+  ↳ bin/rails:4
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:4
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3978878207179910370)[0m
+  ↳ bin/rails:4
+  [1m[35m (3.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:4
+Migrating to CreateWidgets (20140707111715)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:4
+  [1m[35m (18.2ms)[0m  [1m[35mCREATE TABLE "widgets" ("id" bigserial primary key, "name" character varying, "description" text, "stock" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20140707111715_create_widgets.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20140707111715"]]
+  ↳ bin/rails:4
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:4
+  [1m[36mActiveRecord::InternalMetadata Load (0.9ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:4
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:4
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:4
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT pg_advisory_unlock(3978878207179910370)[0m
+  ↳ bin/rails:4
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:4
