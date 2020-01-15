@@ -1,7 +1,7 @@
 
 var pageHandlers = 
 [
-{ 	Name: "Checkout Main Page",
+{ 	Name: "Example",
 	Match:   [ { type: 'title' , text: '- Kigo Checkout ' } ] ,
 	Buttons:  [ { 	text:													    'Request Quote for Solution 17026' , 
 					script:														"SETBYID('apikey', '4699b5d1-86ce-4d2d-8e43-51391393a60d');" +
@@ -23,15 +23,24 @@ var pageHandlers =
 				{ 	text: 														'Go to Checkout', 
 					script:														"window.location = document.getElementsByTagName('a')[0].href;" }]
 },
-{ 	Name: "Checkout Guest Info Page",
-	Match: [ { type: 'url' , text: '/booking/checkout/creditcard/' } , 
-			 { type: 'elementName', text: 'Renter.Phone' } ],
-	Buttons: [ { 	text:														'Populate Guest Details and Submit', 
-					script: 													"SETBYID('renter.firstname','Mike');" +
-																				"SETBYID('renter.lastname','McFerrin');" +
-																				"SETBYID('renter.email','mike.mcferrin@realpage.com');" +
-																				"SETBYID('renter.phone','214-555-5551');" +
-																				"PRESS('btn-guest-info');" } 
+{ 	Name: "New Reservation",
+	Match: [ { type: 'url' , text: '/reservations/new' } , 
+			 { type: 'elementName', text: 'brand_id' } ],
+	Buttons: [ { 	text:														'Populate', 
+					script: 													"" +
+																				"SETBYNAME('brand_id','2');" +
+																				"GETBYCLASS('field-brand',0).click();" +
+																				"" } 
+			]
+},
+{ 	Name: "New Reservation Payment",
+	Match: [ { type: 'url' , text: '/reservations/new' } , 
+			 { type: 'elementName', text: 'customer_name' } ],
+	Buttons: [ { 	text:														'Populate', 
+					script: 													"SETBYNAME('customer_name','Test Customer');" +
+							 													"SETBYNAME('customer_email','mike@directsoftware.com');" +
+																				"SETBYNAME('customer_telephone','2143005551');" +
+																				"" } 
 			]
 },
 { 	Name: "Checkout Guest Credit Card Page",
@@ -53,7 +62,29 @@ var pageHandlers =
 		
 		} 
 		]
-	}
+	},
+	{ 	Name: "YouTube",
+		Match: [ { type: 'url' , text: 'www.youtube.com/' } , 
+				 { type: 'ById', text: 'movie_player' } ],
+		Buttons: [ { 	text: 														'Simplify! Remove Junk',
+						script: 													"document.getElementById('secondary').style['display'] = 'none';" +
+																					"STYLEBYCLASS('video-stream', 'width' , window.outerWidth + 'px');" +
+																					"STYLEBYCLASS('video-stream', 'height' , (window.innerHeight - 200) + 'px');" +
+																					"REMOVEBYID('comments'); var response = 'Simplified!'; response = response; " 
+				},
+	{ 							text: 				'Get all the Suggested Video Info',
+								script: 			"var elems = document.getElementsByTagName('ytd-thumbnail'); " +
+													"var log = '<ol>'; " +
+													"for( var i = 0 ; i < elems.length ; i++ )" +
+													"{ var url = elems[ i ].children[0].href; " +
+													"  var title = elems[ i ].nextElementSibling.children[0].children[0].children[0].nextElementSibling.title;" +
+													" log +=  '<li>' + title + '<a target=\"_blank\" href=\"' + url + '\"> ' + url + '</a></li>'; " +
+													"}; log = log + '</ol>';"
+				} 			
+			
+			
+			]
+		}
 ]; 
 
 var ScriptPrefix = 
@@ -62,7 +93,9 @@ var ScriptPrefix =
 "function PRESS(buttonId){	document.getElementById(buttonId).click();} " +
 "function PRESSBYTAG(tag){	document.getElementsByTagName(tag)[0].click();}" +
 "function CHECK(checkboxId){	document.getElementById(checkboxId).setAttribute('checked','checked');} " +
-"function SETBYCLASS(className,index,value){	document.getElementsByClassName(className)[index].value = value;} " ;
+"function SETBYCLASS(className,index,value){	document.getElementsByClassName(className)[index].value = value;} " +
+"function GETBYCLASS(className,index){	return document.getElementsByClassName(className)[index]; } " +
+"";
 
 function SETBYID(id,value){	document.getElementById(id).value = value;}
 function SETBYNAME(name,value){	document.getElementsByName(name)[0].value = value;}
@@ -70,23 +103,33 @@ function PRESS(buttonId){	document.getElementById(buttonId).click();}
 function PRESSBYTAG(tag){	document.getElementsByTagName(tag)[0].click();}
 function CHECK(checkboxId){	document.getElementById(checkboxId).setAttribute('checked','checked');}
 function SETBYCLASS(className,index,value){	document.getElementsByClassName(className)[index].value = value;}
+function GETBYCLASS(className,index){	return document.getElementsByClassName(className)[index];} 
 
 
 var CurrentTab;
+
+  
 chrome.tabs.onUpdated.addListener( function(tabid,changeInfo,tab) { 
 	if ( changeInfo.status == 'complete' )
 	{	
+		console.log('URL Redirect in tab while Chrome Extension window was open');
 		if ( tab.url != null && CurrentTab != null && tab.url != CurrentTab.url )
 		{
-			chrome.runtime.reload();
-		  
+			chrome.runtime.reload();		  
 		}
 	}
 } );
+
+
+$(document).ready(function(){ 
+	//$.get( "http://fast-pace-prod.herokuapp.com", function( data ) { alert( "Data Loaded: " + data ); console.log(data);  });
+});
+
 document.addEventListener('DOMContentLoaded', checkForPageHandlers , false);
 
  function checkForPageHandlers() {
- 				SetBadge('');
+	 
+	//	SetBadge('');
 
 	chrome.tabs.query({active: true,lastFocusedWindow: true}, 
 	function(tabs) 
@@ -98,7 +141,36 @@ document.addEventListener('DOMContentLoaded', checkForPageHandlers , false);
 		
 		document.getElementById('TabTitle').value = CurrentTab.title;
 		document.getElementById('buttonArea').innerHTML = "";		
+		document.getElementById('messageArea').innerHTML = "Loading";
 		
+		js = ""
+		url = "https://fast-pace-prod.herokuapp.com"; 
+
+		chrome.tabs.executeScript(CurrentTab.id, {code: 
+				"var xmlHttp = new XMLHttpRequest();" +
+				"var tabURL = encodeURI( document.location.href );" +
+				"xmlHttp.open( \"GET\", \"" + url + "?page=\" + tabURL, false ); " +
+				"xmlHttp.send( null );" +
+				"console.log('Return from public url', xmlHttp.responseText ) ;" +
+				"var theElement = document.createElement('div');" +
+				"theElement.tagName='CHROME_EXTENSION_RESULT';" +
+				"theElement.className = 'CHROME_EXTENSION_RESULT';" +
+				"var existingElementCount = document.getElementsByClassName('CHROME_EXTENSION_RESULT').length;" +
+				"theElement.style = 'height: 82px; padding:2px 10px; overflow: hidden; box-shadow: -5px 10px 8px rgba(0, 0, 0, 0.833); border:3px solid rgba(255, 255, 255, 0.833); ; border-radius: 7px; background-color:white; position:absolute; z-index:99999; left: 10px; top:' + (existingElementCount * 90) + 'px;';" + 
+				"theElement.innerHTML = xmlHttp.responseText;" + 
+				"document.getElementsByTagName(\"body\")[0].appendChild(theElement);" +
+				"theElement.innerHTML;"
+
+
+			 }, 
+				function(response) 
+				{   console.log('Executed call public url', response);
+					document.getElementById('messageArea').innerHTML = response;
+				});						
+
+		
+
+
 		for( var i = 0 ; i < pageHandlers.length  ; i++ )
 		{
 			var matched = false;
@@ -128,13 +200,13 @@ document.addEventListener('DOMContentLoaded', checkForPageHandlers , false);
 					{
 						isQueryingPage = true;
 						chrome.tabs.executeScript(CurrentTab.id, {code: "document.getElementsByName('" + pageHandlers[ i ].Match[ m ].text + "').length > 0 ? " + i + " : -1" }, 
-						function(response) 
-						{   // returns count of elements that match the name
-							if ( response >= 0 )
-							{	
-								SetupPage( response );
-							}
-						});						
+								function(response) 
+								{   // returns count of elements that match the name
+									if ( response >= 0 )
+									{	
+										SetupPage( response );
+									}
+								});						
 					}
 				}
 			}
@@ -154,7 +226,8 @@ document.addEventListener('DOMContentLoaded', checkForPageHandlers , false);
 
 
 function SetupPage( i )
-{	SetBadge( " ON ");
+{	
+	// No real use for this Right Now - SetBadge( " ON ");
 
 	document.getElementById('MatchName').value = pageHandlers[ i ].Name;	
 					

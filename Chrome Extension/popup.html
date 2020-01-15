@@ -1,33 +1,39 @@
 <!doctype html>
 <style>
 h1 { padding: 0; color:white; text-shadow: -2px 3px 8px black; }
-body { text-shadow:1px -1px 1px black; width:400px; height:200px; margin: 50px 0 0 0; padding: 0; text-align:center; background: #8A9BFF; background-image: url(popup-bg.png); background-repeat: none;} 
+body { text-shadow:1px -1px 1px black; width:717px; height:421px; margin: 60px 40px 40px 40px; padding: 0; text-align:left; background: #8A9BFF; background-image: url(bg-big-c.png); background-size: 817px 520px; background-repeat: none;} 
 button { opacity:.91; text-shadow:1px -1px 2px black; box-shadow: 6px -4px 16px black; margin: 10px; padding: 8px 12px; font-size:16px; background: #aeadac; color:white; border-radius:5px; border:none; margin-bottom:1px; font-weight: 600;}
 button:hover { opacity:1; background: #cecdcc;  border:1px inset white; padding: 7px 11px;}
 li {  list-style-type: none; margin-bottom: 2px; }
-li span { display: inline-block; width:70px; text-align:right; color:white; margin-right:8px; }
+li span { display: inline-block; width:70px; text-align:left; color:white; margin-right:8px; float:left;}
 input { width:230px; font-size:11px; border: none; background: transparent; padding:2px; color:white; border-radius:3px; margin-right:18px; margin-bottom:1px; padding-left:8px; }
 input:hover { border-bottom: 1px solid white; margin-bottom: 0; cursor:pointer; color:yellow;}
+#messageArea { text-align:left; margin-left:100px; margin-right:40px; padding:1px; }
+#messageArea:hover {  border:1px solid blue; padding:0px; }
 
 </style>
 <html>
   <head>
-    <title>FastPace</title>
+	<title>FastPace</title>
+	<script src="jquery-3.4.1.min.js"></script>
     <script src="popup.js"></script>
   </head>
   <body>
-	  <img src="logo_direct.svg"/>
+<!--	  <img src="logo_direct.svg"/> -->
    <ul>
-	<li>
-	<span>Title</span> <input type="text" id="TabTitle"/>
-	</li>
-	<li>
-	<span>Match Name</span> <input type="text" id="MatchName"/>
-	</li>
+		<li>
+			<span>Title</span> 
+				<input type="text" id="TabTitle"/>
+		</li>
+		<li>
+			<span>Match Name</span> 
+				<input type="text" id="MatchName"/>
+		</li>
+		<li>
+			<span>Messages</span> 
+				<div id="messageArea" style="text-align:left;"></div>
+		</li>
 	</ul>
-	
-	<div id="buttonArea">
-	
-	</div>
+	<div id="buttonArea"></div>
   </body>
 </html>
