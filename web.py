@@ -4,7 +4,7 @@ app = Flask(__name__)
 
 @app.route('/<requestpath>')
 def index(requestpath):
- 
+  path = request.args.get('path')
   script = '' \
     '<!DOCTYPE html>' \
     '  <html>' \
@@ -15,7 +15,8 @@ def index(requestpath):
     '' \
     '   </head>' \
     '   <body>' \
-    '     <h4>Request for page<span>' + requestpath + '</span></h4>' \
+    '     <h4>Request for page: <span>' + requestpath + '</span></h4>' \
+    '     <h5>path: <span>' + path + '</span></h5>' \
     '   </body>' \
     ' </html>' 
   
