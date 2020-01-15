@@ -4,7 +4,7 @@ app = Flask(__name__)
 @app.route('/')
 def index():
  
-  script = 
+  script = '' \
     '<!DOCTYPE html>' \
     '  <html>' \
     '    <head>' \
@@ -29,3 +29,4 @@ def index():
     ' </html>' 
   
   return script
+  
