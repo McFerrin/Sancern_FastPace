@@ -24,7 +24,7 @@ def index():
     '' \
     '   </head>' \
     '   <body>' \
-    '     <h4>Request for page<span>' + request.GET.urlencode() + '</span></h4>' \
+    '     <h4>Request for page</h4>' \
     '   </body>' \
     ' </html>' 
   
