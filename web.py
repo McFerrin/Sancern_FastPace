@@ -1,4 +1,5 @@
 from flask import Flask
+from flask import request
 app = Flask(__name__)
 
 @app.route('/')
@@ -14,7 +15,7 @@ def index():
     '' \
     '   </head>' \
     '   <body>' \
-    '     <h4>Request for page</h4>' \
+    '     <h4>Request for page<span>' + request.GET.urlencode() + '</span></h4>' \
     '   </body>' \
     ' </html>' 
   
