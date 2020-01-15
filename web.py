@@ -1,6 +1,27 @@
+import os
+import psycopg2
 from flask import Flask
 from flask import request
 app = Flask(__name__)
+
+  
+@app.route('/db/test')
+def db_test():
+  RESPONSE = ""
+  DATABASE_URL = os.environ['DATABASE_URL']
+  try:
+    RESPONSE = "Loading" + DATABASE_URL
+    conn = psycopg2.connect( DATABASE_URL, sslmode='require')
+    cur = conn.cursor()
+    cur.execute("""SELECT * from boxes""")
+    rows = cur.fetchall()
+    for row in rows:
+      RESPONSE = RESPONSE + " " + row[0]
+  except:
+    RESPONSE = "I am unable to connect to the database"
+  return RESPONSE
+
+
 
 @app.route('/<requestpath>')
 def index(requestpath):
@@ -21,4 +42,3 @@ def index(requestpath):
     ' </html>' 
   
   return script
-  
