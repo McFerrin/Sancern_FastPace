@@ -144,14 +144,15 @@ document.addEventListener('DOMContentLoaded', checkForPageHandlers , false);
 		document.getElementById('messageArea').innerHTML = "Loading";
 		
 		js = ""
-		url = "https://fast-pace.herokuapp.com"; 
+		//url = "https://fast-pace.herokuapp.com"; 
 		//url = "https://fast-pace-prod.herokuapp.com"; 
-
+		url = "https://fierce-wave.herokuapp.com/widgets";
 		chrome.tabs.executeScript(CurrentTab.id, {code: 
 				"var xmlHttp = new XMLHttpRequest();" +
 				"var tabURL = encodeURIComponent( document.location.href.replace('http://','').replace('https://','') );" +
 //				"alert('" + url + "/load?path=' + tabURL);" +
-				"xmlHttp.open( 'GET', '" + url + "/load?path=' + tabURL, false ); " +
+				"xmlHttp.open( 'GET', '" + url + "', false ); " +
+//--->good				"xmlHttp.open( 'GET', '" + url + "/load?path=' + tabURL, false ); " +
 				"xmlHttp.send( null );" +
 				"console.log('Return from public url', xmlHttp.responseText ) ;" +
 				"var theElement = document.createElement('div');" +
