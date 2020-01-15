@@ -3,7 +3,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
- 
+  
   script = '<script> '\
     'chrome.runtime.onMessage.addListener(' \
     'function(request, sender, sendResponse) {' \
