@@ -12,7 +12,9 @@ module RubyGettingStarted
     config.load_defaults 5.0
 
     config.action_dispatch.default_headers = {
-      'Access-Control-Allow-Origin' => 'http://fierce-wave.herokuapp.com',
+#      'Access-Control-Allow-Origin' => 'http://fierce-wave.herokuapp.com',
+      'Access-Control-Allow-Origin' => '*',
+      'Access-Control-Allow-Methods' => %w{GET POST OPTIONS}.join(","),
       'Access-Control-Request-Method' => %w{GET POST OPTIONS}.join(",")
     }
     # Settings in config/environments/* take precedence over those specified here.
