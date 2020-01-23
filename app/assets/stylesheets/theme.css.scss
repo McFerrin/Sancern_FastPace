@@ -4,9 +4,17 @@ $brand-dark: darken($brand-language, 50%);
 $brand-light: lighten($brand-language, 25%);
 body
 {
-  .rotate-me {    animation: rotation 18s infinite linear; }
-  .rotate-me-fast {    animation: rotation 4s infinite linear; }
-    @keyframes rotation {
+  background-color: rgb(233, 231, 227);
+  
+  .rotate-me {    animation: chill_rotation 8s infinite linear; }
+    @keyframes bounce_rotation {
+      from  { transform: rotate(0deg) scale(1.1); }
+      10%   { transform: rotate(30deg) scale(1.3); }
+      90%   { transform: rotate(160deg) scale(1.5); }
+      95%   { transform: rotate(320deg) scale(1.8); }
+      to    { transform: rotate(359deg) scale(1.1); }
+    }
+    @keyframes chill_rotation {
       from  { transform: rotate(0deg) scale(1); }
       10%   { transform: rotate(30deg) scale(1.3); }
       90%   { transform: rotate(180deg) scale(1.6); }
@@ -16,11 +24,14 @@ body
 }
 .jumbotron {
   background: $brand-dark;
+  border-top: 4px solid #FFFFFF66;
+  border-bottom: 8px solid #00000066;
   color: white;
   padding-bottom: 80px;
 
   .btn {
     margin-left:10px;
+    margin-top:10px;
     background-color: lighten($brand-primary, 10%);
     &:hover {
       background: lighten($brand-primary, 15%);
@@ -59,9 +70,9 @@ body
       max-width: 100%;
       zoom:1.5;
     }
-    &:hover {
-      animation: rotation 2s infinite linear; 
-    }
+     &:hover {
+        animation: bounce_rotation 2s infinite linear; 
+     }
   }
 
 }
